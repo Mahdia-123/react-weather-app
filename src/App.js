@@ -9,15 +9,27 @@ export default function App() {
 
         <footer>
           This page was coded by{" "}
-          <a href="https://github.com/Mahdia-123" target="_blank">
+          <a
+            href="https://github.com/Mahdia-123"
+            target="_blank"
+            rel="noreferrer"
+          >
             Mahdia Khamoosh
           </a>{" "}
           and is{" "}
-          <a href="https://github.com/Mahdia-123/react-project" target="_blank">
+          <a
+            href="https://github.com/Mahdia-123/react-project"
+            target="_blank"
+            rel="noreferrer"
+          >
             open-sourced o Github
           </a>{" "}
           hosted on{" "}
-          <a href="https://lovely-weather-search.netlify.app/ " target="_blank">
+          <a
+            href="https://lovely-weather-search.netlify.app/ "
+            target="_blank"
+            rel="noreferrer"
+          >
             Netlify
           </a>
         </footer>
