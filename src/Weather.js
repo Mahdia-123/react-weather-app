@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
+import LoadingSpinner from "./LoadingSpinner";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -61,6 +62,11 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "loading..";
+
+    return (
+      <div className="text-center">
+        <LoadingSpinner />
+      </div>
+    );
   }
 }
