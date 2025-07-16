@@ -41,3 +41,25 @@
   line-height: 1;
   margin-left: 5px;
 }
+@media (max-width: 960px) {
+  .weather .temperature {
+    font-size: 34px;
+  }
+  .weather canvas {
+    display: inline-block;
+    margin-right: 2px;
+  }
+  .weather .unit {
+    font-size: 12px;
+    top: -15px;
+  }
+  .weather canvas {
+    height: 44px;
+  }
+  .btn {
+    font-size: 12px;
+  }
+  .form-control {
+    padding: 5px 10px;
+  }
+}
