@@ -9,24 +9,25 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({});
   const [city, setCity] = useState(props.defaultcity);
   const [loaded, setLoaded] = useState(false);
-  function handleSubmit(response) {
+  function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
+      loaded: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
-      coordinate: response.data.coord,
-      wind: response.data.wind.speed,
-      date: new Date(response.data.dt * 1000),
       humidity: response.data.main.humidity,
-      city: response.data.name,
-      icon: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
     });
     setLoaded(true);
   }
   function search() {
     const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleSubmit);
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function handleSubmition(event) {
@@ -61,7 +62,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast coordinates={weatherData.coordinate} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
